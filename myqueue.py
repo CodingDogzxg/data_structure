@@ -40,7 +40,7 @@ class MyQueue:
             self.q_head = self.q_head % self.queue_capacity  # 避免队头下标超过队列容量
             self.q_length -= 1
 
-    def for_queue(self):
+    def for_queue(self):  # 遍历栈元素
         for n in range(self.q_head, self.q_head + self.q_length):
             print(self.queue[n % self.queue_capacity])
 
