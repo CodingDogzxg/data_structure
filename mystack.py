@@ -1,3 +1,5 @@
+# author:CodingDog
+
 class MyStack:
 
     def __init__(self, stack_capacity):  # 初始化栈
@@ -42,7 +44,7 @@ class MyStack:
         if not is_from_bottom:  # 自栈顶遍历
             n = self.s_top
             for x in range(0, self.s_top):
-                print(self.stack[n])
+                print(self.stack[n - 1])
                 n -= 1
 
 
@@ -50,12 +52,12 @@ if __name__ == '__main__':
     a = MyStack(4)
     a.enter_elements(1)
     a.enter_elements(2)
-    a.for_stack()
+    a.for_stack(False)
     print('---')
     a.enter_elements(3)
     a.enter_elements(4)
     a.enter_elements(5)
-    a.for_stack()
+    a.for_stack(False)
     print('---')
     a.remove_elements()
     a.for_stack()
