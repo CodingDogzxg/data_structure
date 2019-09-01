@@ -1,3 +1,5 @@
+# author:CodingDog
+
 class MyQueue:
 
     def __init__(self, queue_capacity):  # 初始化队列
