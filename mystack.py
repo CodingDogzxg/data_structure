@@ -1,5 +1,6 @@
 # author:CodingDog
 
+
 class MyStack:
 
     def __init__(self, stack_capacity):  # 初始化栈

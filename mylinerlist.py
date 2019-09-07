@@ -1,5 +1,6 @@
 # author:CodingDog
 
+
 class MyList:
 
     def __init__(self, list_capacity):  # 初始顺序表
