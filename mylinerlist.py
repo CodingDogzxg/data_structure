@@ -23,7 +23,7 @@ class MyList:
     def len_list(self):  # 测量顺序表的长度
         return self.l_length
 
-    def get_elements(self, subscript):  # 获取顺序表内指定下标的元素
+    def get_element(self, subscript):  # 获取顺序表内指定下标的元素
         if subscript < 0 or subscript >= self.l_length:
             return False
         elif not subscript < 0 or subscript >= self.l_length:
@@ -87,4 +87,4 @@ if __name__ == '__main__':
     print('---')
     a.prior_element(100)
     a.next_element(100)
-    a.get_elements(1)
+    a.get_element(1)
