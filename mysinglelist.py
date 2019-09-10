@@ -145,3 +145,6 @@ if __name__ == '__main__':
     a.get_element(1)
     a.get_element(0)
     a.get_element(100)
+    print("---")
+    a.clear_list()
+    a.for_list()
