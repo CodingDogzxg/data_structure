@@ -16,9 +16,13 @@ class Node:
         if self.lchild:  # 本身不是要找的节点 判断左节点是否为空
             if self.lchild.index == subscript:  # 判断左节点是否是要找的节点
                 return self.lchild
+            else:  # 左节点也是要找的 继续向下递归
+                return self.lchild.search_node(subscript)  # !!这里一定要再加一个return
         if self.rchild:  # 本身不是要找的节点 判断右节点是否为空
             if self.rchild.index == subscript:  # 判读右节点是否是要找的节点
                 return self.rchild
+            else:
+                return self.rchild.search_node(subscript)
         return None  # 未找到 返回None
 
     def delete_node(self):
@@ -81,6 +85,9 @@ class MyTree:
 
     def delete_node(self, subscript):
         temp = self.search_node(subscript)  # 临时变量接受寻找节点的结果
+        if not temp.parent:
+            del self.tree_root
+            return True
         if not temp:  # 如果寻找节点的结果是None
             return False
         temp.delete_node()
@@ -106,7 +113,7 @@ if __name__ == '__main__':
     node2.index, node2.data = 2, 8
 
     node3 = Node()
-    node3.index, node3.daa = 3, 2
+    node3.index, node3.data = 3, 2
 
     node4 = Node()
     node4.index, node4.data = 4, 6
@@ -130,8 +137,9 @@ if __name__ == '__main__':
     print("---")
     a.postorder_traversal()
     print("---")
+    print(a.search_node(3).data)
+    print("---")
     a.delete_node(1)
     a.preorder_traversal()
     print("---")
     a.destroy_tree()
-    a.preorder_traversal()
