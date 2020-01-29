@@ -1,5 +1,5 @@
 # author:CodingDog
-# info:基于数组构建树
+# info: 基于数组构建树
 
 
 class MyTree:
@@ -49,6 +49,7 @@ class MyTree:
     def for_tree(self):
         for x in self.tree:
             print(x)
+
 
 if __name__ == '__main__':
     a = MyTree(10, 3)
