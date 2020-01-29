@@ -1,5 +1,5 @@
 # author:CodingDog
-# info:基于链表构建树
+# info: 基于链表构建树
 
 
 class Node:
