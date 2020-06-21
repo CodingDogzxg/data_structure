@@ -29,9 +29,8 @@ class Node:
 
 class MyMap:
     def __init__(self, map_capacity):
-        self.alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H']
         self.map_capacity = map_capacity
-        self.node_array = [Node(self.alphabet[i]) for i in range(self.map_capacity)]
+        self.node_array = list()
         self.node_count = len(self.node_array)
         self.matrix = [0 for i in range(self.map_capacity**2)]
 
@@ -39,12 +38,12 @@ class MyMap:
         pass
 
     def add_node(self, data):
-        self.node_array[self.node_count].data = data
+        self.node_array.append(data)
         self.node_count += 1
 
     def reset_node(self):
         for i in range(self.node_count):
-            self.node_array[i] = Node(self.alphabet[i])
+            # self.node_array[i] = Node(self.alphabet[i])
             self.node_array[i].visited = False
 
     def set_value_to_directed_matrix(self, row, col, val=1):
@@ -109,6 +108,15 @@ class MyMap:
 
 if __name__ == '__main__':
     a = MyMap(8)
+
+    a.add_node(Node('A'))
+    a.add_node(Node('B'))
+    a.add_node(Node('C'))
+    a.add_node(Node('D'))
+    a.add_node(Node('E'))
+    a.add_node(Node('F'))
+    a.add_node(Node('G'))
+    a.add_node(Node('H'))
 
     a.set_value_to_undirected_matrix(0, 1)
     a.set_value_to_undirected_matrix(0, 3)
